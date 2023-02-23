@@ -44,6 +44,9 @@ Rails.application.configure do
   # Recommended default for devise, not sure what this does
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Send emails to file for testing
+  config.action_mailer.delivery_method = :file
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
