@@ -4,5 +4,13 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
-  ]
+  ],
+  plugins: [
+      require("daisyui"),
+  ],
+  daisyui: {
+    styled: true,
+    themes:["retro, luxury"],
+    darkTheme: "luxury"
+  }
 }
