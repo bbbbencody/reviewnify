@@ -35,6 +35,7 @@ gem "redis", "~> 5.0"
 
 # Standard-ish rails auth solution
 gem "devise"
+gem "devise-encryptable"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
