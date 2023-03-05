@@ -6,11 +6,10 @@ module.exports = {
     './app/javascript/**/*.js'
   ],
   plugins: [
+      require("@tailwindcss/typography"),
       require("daisyui"),
   ],
   daisyui: {
     styled: true,
-    themes:["retro, luxury"],
-    darkTheme: "luxury"
-  }
+    themes: ["retro"],}
 }

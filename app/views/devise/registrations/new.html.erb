@@ -1,29 +1,33 @@
-<h2>Sign up</h2>
+<%= turbo_frame_tag 'login_modal' do %>
+  <div class="fixed inset-0 z-10 flex items-center justify-center">
+    <div class="fixed inset-0 opacity-75 "></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="z-20 p-6 card w-96 lg:w-auto bg-gradient-to-br from-primary to-secondary justify-center">
+      <h2 class="text-lg font-medium mb-4">Sign up</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: true }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-bordered"%>
-  </div>
+        <div class="field">
+          <%= f.label :email, class: "label block font-medium mb-2" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full py-2 px-4"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <div class="field">
+          <%= f.label :password, class: "label font-medium" %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="field mb-4">
+          <%= f.label :password_confirmation, class: "label font-medium mb-2" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-  <div class="actions btn btn-primary">
-    <%= f.submit "Sign up" %>
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn-outline"%>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

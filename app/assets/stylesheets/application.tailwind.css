@@ -5,3 +5,15 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+button {
+    @apply btn
+}
+
+input {
+    @apply input input-bordered
+}
+
+label {
+    @apply label
+}
