@@ -1,33 +1,38 @@
 <%= turbo_frame_tag 'login_modal' do %>
-  <div class="fixed inset-0 z-10 flex items-center justify-center">
-    <div class="fixed inset-0 opacity-75 "></div>
+  <div class="fixed inset-0 z-1 flex items-center justify-center">
+    <div class="fixed inset-0 opacity-75 bg-gradient-to-br from-primary to-secondary"></div>
 
-    <div class="z-20 p-6 card w-96 lg:w-auto bg-gradient-to-br from-primary to-secondary justify-center">
+    <div class="z-20 p-6 w-4/12 justify-self-auto bg-white">
       <h2 class="text-lg font-medium mb-4">Sign up</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: true }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :email, class: "label block font-medium mb-2" %>
+          <%= f.label :email, class: "label font-medium" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full py-2 px-4"%>
         </div>
 
         <div class="field">
           <%= f.label :password, class: "label font-medium" %>
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "w-full" %>
         </div>
 
         <div class="field mb-4">
-          <%= f.label :password_confirmation, class: "label font-medium mb-2" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= f.label :password_confirmation, class: "label font-medium" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up", class: "btn-outline"%>
+          <%= f.submit "Sign up", class: "btn btn-primary w-full"%>
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <div class="divider">OR</div>
+
+      <div class="justify-center">
+        <p>Already have an account?</p>
+        <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-primary w-full" %>
+      </div>
     </div>
   </div>
 <% end %>

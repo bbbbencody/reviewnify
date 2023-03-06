@@ -11,7 +11,7 @@ button {
 }
 
 input {
-    @apply input input-bordered
+    @apply input input-bordered input-ghost input-primary
 }
 
 label {
