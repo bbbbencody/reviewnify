@@ -1,29 +1,61 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Page title</title>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<!--  <link rel="stylesheet" href="css/tailwind/tailwind.min.css">-->
+  <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+<!--  <script src="js/main.js"></script>-->
+</head>
+<body class="antialiased bg-body text-body font-body">
+<div class="">
+  <section class="relative p-8 bg-blueGray-100 overflow-hidden">
+    <%= image_tag "uinel/sign-up/color-circles2.png", class: "absolute top-0 left-0" %>
+    <%= image_tag "uinel/sign-up/half-circle-purple.png", class: "absolute bottom-0 right-0" %>
+    <div class="relative py-20 md:py-40 bg-white rounded-4xl">
+      <div class="container px-4 mx-auto">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full lg:w-1/2 px-4 mb-14 lg:mb-0">
+            <div class="lg:max-w-md">
+              <span class="mb-11 block font-medium uppercase tracking-widest text-xs leading-4 text-gray-300">WOOOOPS</span>
+              <h2 class="mb-12 text-9xl md:text-10xl xl:text-11xl leading-tight font-heading font-medium">Register now</h2>
+              <p class="text-lg text-gray-400">Sed porttitor turpis sit amet malesuada porta vivamus lobortis.</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 px-4">
+            <div class="flex flex-wrap justify-center -mb-4 -mx-4">
+              <div class="w-full md:w-auto px-4 mb-4">
+                <a class="flex items-center justify-center py-5 px-5 border-2 border-gray-50 hover:border-gray-100 rounded-xl" href="#">
+                  <%= image_tag "uinel/sign-up/google.svg", class: "w-6 h-6 mr-4" %>
+                  <p class="font-bold uppercase">Google</p>
+                </a>
+              </div>
+              <div class="w-full md:w-auto px-4 mb-4">
+                <a class="flex items-center justify-center py-5 px-5 border-2 border-gray-50 hover:border-gray-100 rounded-xl" href="#">
+                  <%= image_tag "uinel/sign-up/apple.svg", class: "w-6 h-6 mr-4" %>
+                  <p class="font-bold uppercase">Apple</p>
+                </a>
+              </div>
+              <div class="w-full md:w-auto px-4 mb-4">
+                <a class="flex items-center justify-center py-5 px-5 border-2 border-gray-50 hover:border-gray-100 rounded-xl" href="#">
+                  <%= image_tag "uinel/sign-up/facebook.svg", class: "w-6 h-6 mr-4" %>
+                  <p class="font-bold uppercase">Facebook</p>
+                </a>
+              </div>
+            </div>
+            <div class="mt-16 max-w-md mx-auto">
+              <h3 class="mb-8 text-xl text-gray-400">Sign up with Email</h3>
+              <input class="w-full mb-6 py-5 px-12 text-xl border-2 border-blue-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" type="email" placeholder="Your Email">
+              <input class="w-full mb-6 py-5 px-12 text-xl border-2 border-blue-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" type="password" placeholder="Password">
+              <input class="w-full mb-14 py-5 px-12 text-xl border-2 border-blue-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" type="password" placeholder="Confirm password">
+              <a class="block py-5 px-10 mx-auto w-full md:max-w-max text-xl leading-6 text-white font-medium tracking-tighter font-heading text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl" href="#">Register now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
