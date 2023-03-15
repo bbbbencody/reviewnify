@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import BurgerMenuController from "./burger_menu_controller"
+application.register("burger-menu", BurgerMenuController)
